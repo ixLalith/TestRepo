@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">getJWTToken</value>
+  <array name="sig" type="value" depth="1">
+    <value>[i] field:0:required secretKey</value>
+    <value>[i] recref:1:required userData IXUserManagement.documents:UserData</value>
+    <value>[i] field:0:required expirationTime</value>
+    <value>[o] field:0:required jwtToken</value>
+  </array>
+  <value name="sigtype">java 3.5</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">Ly8gcGlwZWxpbmUgDQpJRGF0YUN1cnNvciBwaXBlbGluZUN1cnNvciA9IHBpcGVsaW5lLmdldEN1
+cnNvcigpOw0KCVN0cmluZwlzZWNyZXRLZXkgPSBJRGF0YVV0aWwuZ2V0U3RyaW5nKCBwaXBlbGlu
+ZUN1cnNvciwgInNlY3JldEtleSIgKTsNCglTdHJpbmcJZXhwaXJhdGlvblRpbWUgPSBJRGF0YVV0
+aWwuZ2V0U3RyaW5nKCBwaXBlbGluZUN1cnNvciwgImV4cGlyYXRpb25UaW1lIiApOw0KCWxvbmcg
+ZXhwVGltZU1pbGxpcyA9IExvbmcudmFsdWVPZihleHBpcmF0aW9uVGltZSk7DQogICAgTWFwPFN0
+cmluZywgT2JqZWN0PiBjbGFpbXMgPSBuZXcgSGFzaE1hcDxTdHJpbmcsIE9iamVjdD4oKTsNCgkv
+LyB1c2VyRGF0YSANCglJRGF0YVtdCXVzZXJEYXRhID0gSURhdGFVdGlsLmdldElEYXRhQXJyYXko
+IHBpcGVsaW5lQ3Vyc29yLCAidXNlckRhdGEiICk7DQoJaWYgKCB1c2VyRGF0YSAhPSBudWxsKSAN
+Cgl7DQoJCWZvciAoIGludCBpID0gMDsgaSA8IHVzZXJEYXRhLmxlbmd0aDsgaSsrICkNCgkJew0K
+CQkJSURhdGFDdXJzb3IgdXNlckRhdGFDdXJzb3IgPSB1c2VyRGF0YVtpXS5nZXRDdXJzb3IoKTsN
+CgkJCQlTdHJpbmcJa2V5ID0gSURhdGFVdGlsLmdldFN0cmluZyggdXNlckRhdGFDdXJzb3IsICJr
+ZXkiICk7DQoJCQkJU3RyaW5nCXZhbHVlID0gSURhdGFVdGlsLmdldFN0cmluZyggdXNlckRhdGFD
+dXJzb3IsICJ2YWx1ZSIgKTsNCgkJCQl2YWx1ZSA9IHZhbHVlLnN0YXJ0c1dpdGgoIiUiKSAmJiB2
+YWx1ZS5lbmRzV2l0aCgiJSIpID8gIiIgOiB2YWx1ZTsNCgkJCQlpZihrZXkgIT0gbnVsbCAmJiB2
+YWx1ZSAhPSBudWxsKXsNCgkJCQkJY2xhaW1zLnB1dChrZXksIHZhbHVlKTsNCgkJCQl9DQoJCQl1
+c2VyRGF0YUN1cnNvci5kZXN0cm95KCk7DQoJCX0gDQoJfQ0KcGlwZWxpbmVDdXJzb3IuZGVzdHJv
+eSgpOw0KDQpUb2tlbkF1dGhlbnRpY2F0b3IgdG9rZW4gPSBuZXcgVG9rZW5BdXRoZW50aWNhdG9y
+KCk7DQpTdHJpbmcgand0VG9rZW4gPSB0b2tlbi5nZXRKV1RVc2luZ0hTMjU2KGNsYWltcywgc2Vj
+cmV0S2V5LCBleHBUaW1lTWlsbGlzKTsJCQ0KLy8gcGlwZWxpbmUNCi8vDQpJRGF0YUN1cnNvciBw
+aXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0YVV0aWwucHV0KCBw
+aXBlbGluZUN1cnNvcl8xLCAiand0VG9rZW4iLCBqd3RUb2tlbiApOw0KcGlwZWxpbmVDdXJzb3Jf
+MS5kZXN0cm95KCk7DQoJDQoJDQoJDQo=</value>
+</Values>

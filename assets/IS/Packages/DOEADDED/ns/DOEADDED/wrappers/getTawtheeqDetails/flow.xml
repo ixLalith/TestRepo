@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE TIMEOUT="" SERVICE="IXCommon.work.flowServices:validateJWTToken" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+</MAP>
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="DOEADDED.work.flowServices:getTawtheeqDetails" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="wrapper_type">IData</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">input</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">TawtheeqRequest</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="wrapper_type">IData</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="rec_closed">true</value>
+            <value name="modifiable">true</value>
+            <value name="rec_ref">DOEADDED.documents.tawtheeq.consumer:TawtheeqRequest</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">tradeLicenseNumber</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">emiratesId</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">contractNo</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">logUserInfo</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">IXLoggingServer.documents:LogUserInformation</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">jwtResponse</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">IXCommon.documents:JWTResponse</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/contractNo;1;0" TO="/input;2;0/TawtheeqRequest;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqRequest/ContractNo;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/jwtResponse;4;0;IXCommon.documents:JWTResponse/emiratesId;1;0" TO="/emiratesId;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/jwtResponse;4;0;IXCommon.documents:JWTResponse/applicantId;1;0" TO="/tradeLicenseNumber;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">input</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="is_public">false</value>
+            <value name="field_name">TawtheeqRequest</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="modifiable">true</value>
+            <value name="rec_ref">DOEADDED.documents.tawtheeq.consumer:TawtheeqRequest</value>
+          </record>
+        </array>
+        <value name="modifiable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">tradeLicenseNumber</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">emiratesId</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">output</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">contractNo</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$httpRequest</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">pub.flow:HTTPRequest</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">isValid</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">errors</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">pub.rest.jsonapi:errorTemplate</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">logUserInfo</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">IXLoggingServer.documents:LogUserInformation</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">status</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">IXCommon.documents:Status</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">jwtResponse</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">IXCommon.documents:JWTResponse</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">response</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">TawtheeqAllDetailsResponse</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="wrapper_type">IData</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="rec_closed">true</value>
+            <value name="modifiable">true</value>
+            <value name="rec_ref">DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">status</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="wrapper_type">IData</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="rec_closed">true</value>
+            <value name="modifiable">true</value>
+            <value name="rec_ref">IXCommon.documents:Status</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="wrapper_type">IData</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">response</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">TawtheeqAllDetailsResponse</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="wrapper_type">IData</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="rec_closed">true</value>
+            <value name="modifiable">true</value>
+            <value name="rec_ref">DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">status</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="wrapper_type">IData</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="rec_closed">true</value>
+            <value name="modifiable">true</value>
+            <value name="rec_ref">IXCommon.documents:Status</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/PropertyRegistrationNumber;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/propertyRegistrationNumber;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/PropertyName;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/propertyName;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/PropertyType;2;0/Code;3.7;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/propertyType;2;0/code;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/PropertyType;2;0/ArabicDescription;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/propertyType;2;0/arabicDescription;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/PropertyType;2;0/EnglishDescription;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/propertyType;2;0/englishDescription;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/Zone;2;0/Code;3.7;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/zone;2;0/code;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/Zone;2;0/ArabicDescription;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/zone;2;0/arabicDescription;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/Zone;2;0/EnglishDescription;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/zone;2;0/englishDescription;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/Sector;2;0/Code;3.7;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/sector;2;0/code;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/Sector;2;0/ArabicDescription;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/sector;2;0/arabicDescription;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/Sector;2;0/EnglishDescription;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/sector;2;0/englishDescription;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/PlotNo;3.7;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/plotNo;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/PremisesNumber;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/premisesNumber;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/UnitRegistrationNumber;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/unitRegistrationNumber;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/UnitName;3.7;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/unitName;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/UnitType;2;0/Code;3.7;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/unitType;2;0/code;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/UnitType;2;0/ArabicDescription;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/unitType;2;0/arabicDescription;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/UnitType;2;0/EnglishDescription;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/unitType;2;0/englishDescription;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/NumberOfBedRooms;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/numberOfBedRooms;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/OtherRooms;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/otherRooms;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/FloorNo;3.7;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/floorNo;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/NoOfOccupants;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/noOfOccupants;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/LeasedAreaM2;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/leasedAreaM2;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/ActualUsage;2;0/Code;3.7;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/actualUsage;2;0/code;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/ActualUsage;2;0/ArabicDescription;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/actualUsage;2;0/arabicDescription;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/ActualUsage;2;0/EnglishDescription;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/actualUsage;2;0/englishDescription;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/UnitDetails;2;0/PremisesNumber;3.7;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/unitDetails;2;0/premisesNumber;3.7;0">
+</MAPCOPY>
+
+<MAPDELETE FIELD="/input;2;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/contractNo;1;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/isValid;1;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/status;4;0;IXCommon.documents:Status">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/response;2;0">
+</MAPDELETE>
+
+<MAPCOPY FROM="/response;2;0/status;4;0;IXCommon.documents:Status/description;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/detail;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/status;4;0;IXCommon.documents:Status/msgCode;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/status;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/status;4;0;IXCommon.documents:Status/code;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/code;1;0">
+</MAPCOPY>
+
+<MAPDELETE FIELD="/tradeLicenseNumber;1;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/emiratesId;1;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/$httpRequest;4;0;pub.flow:HTTPRequest">
+</MAPDELETE>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/StreetRoad;2;0/Code;3.7;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/streetRoad;2;0/code;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/StreetRoad;2;0/ArabicDescription;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/streetRoad;2;0/arabicDescription;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TawtheeqAllDetailsResponse;4;0;DOEADDED.documents.tawtheeq.consumer:TawtheeqAllDetailsResponse/Contents;2;0/PropertyDetails;2;0/StreetRoad;2;0/EnglishDescription;1;0" TO="/output;4;0;DOEADDED.documents.tawtheeq.provider:TawtheeqAllDetailsResponse/contents;2;0/propertyDetails;2;0/streetRoad;2;0/englishDescription;1;0">
+</MAPCOPY>
+
+<MAPDELETE FIELD="/logUserInfo;4;0;IXLoggingServer.documents:LogUserInformation">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/jwtResponse;4;0;IXCommon.documents:JWTResponse">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+</FLOW>

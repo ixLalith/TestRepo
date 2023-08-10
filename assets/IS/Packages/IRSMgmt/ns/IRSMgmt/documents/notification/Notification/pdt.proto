@@ -1,0 +1,135 @@
+message IRSMgmt_documents_incidentNotification_IncidentNotification {
+optional  string requestId = 1;
+optional  string notificationId = 2;
+optional  string applicantId = 3;
+optional  string siteId = 31;
+optional  string notificationDateTime = 5;
+optional  string incidentDuration = 6;
+optional  string description = 7;
+optional  string immediateActionsTaken = 8;
+optional  string numberOfEffectedCustomers = 9;
+optional  string reportedOn = 11;
+optional  string reportedBy = 12;
+optional  string approvedOn = 13;
+optional  string approvedBy = 14;
+optional  string notificationType = 15;
+optional  string status = 16;
+optional  string statusOfIncident = 17;
+optional  string restorationDateTime = 18;
+optional  string acknowledgedOn = 19;
+optional  string acknowledgedBy = 20;
+optional  string acknowledgedRemarks = 21;
+optional  string thirdPartyIncident = 22;
+repeated  string incidentType = 23;
+repeated  string sector = 24;
+repeated  IRSMgmt_documents_incidentNotification_Incidents incidents = 25;
+repeated  IRSMgmt_documents_incidentNotification_RelatedIncident relatedIncident = 26;
+optional  IRSMgmt_documents_incidentNotification_RelatedIncidentUnits unit = 27;
+repeated  IRSMgmt_documents_incidentNotification_UnitsEffected unitsEffected = 28;
+repeated  IRSMgmt_documents_incidentNotification_EffectedCustomers effectedCustomers = 29;
+repeated  IXCommon_documents_AttachmentInfo attachments = 30;
+optional  pub_publish_envelope _env = 536870910;
+}
+message IRSMgmt_documents_incidentNotification_RelatedIncidentUnits {
+optional  double electricityGenerationPriorIncident = 1;
+optional  double electricityGenerationPostIncident = 2;
+optional  double electricityGenerationLossDueToIncident = 3;
+optional  double waterProductionPriorIncident = 4;
+optional  double waterProductionPostIncident = 5;
+optional  double waterProductionLossDueToIncident = 6;
+optional  string unitsMadeAvaliable = 7;
+optional  string feederName = 8;
+optional  double interruptedLoad = 9;
+optional  double totalPlantGeneration = 10;
+optional  double totalPlantProduction = 11;
+optional  double capacityLoss = 12;
+optional  string id = 14;
+}
+message IRSMgmt_documents_incidentNotification_Incidents {
+optional  string incidentType = 1;
+optional  string sector = 2;
+optional  string requestId = 3;
+optional  string id = 4;
+}
+message IXCommon_documents_AttachmentInfo {
+optional  string id = 1;
+optional  string type = 2;
+optional  string fileSize = 3;
+optional  string system = 4;
+optional  string filePath = 5;
+optional  string fileType = 6;
+optional  string fileName = 7;
+optional  string requestId = 8;
+optional  string companyId = 9;
+optional  int64 lastUpdatedDate = 10;
+optional  string attachmentTypeId = 11;
+optional  IXCommon_documents_Attachment attachment = 12;
+optional  IXUserManagement_documents_UserDetails lastUpdatedBy = 13;
+}
+message IXUserManagement_documents_UserDetails {
+optional  string userId = 1;
+optional  string userName = 2;
+optional  string emailId = 3;
+optional  string contactNumber = 4;
+}
+message IXCommon_documents_Attachment {
+optional  string url = 1;
+optional  string content = 2;
+}
+message IRSMgmt_documents_incidentNotification_RelatedIncident {
+optional  string relatedTo = 1;
+optional  string id = 3;
+}
+message IRSMgmt_documents_incidentNotification_EffectedCustomers {
+optional  string requestId = 1;
+optional  string effectedCustomers = 2;
+optional  string id = 3;
+}
+message IRSMgmt_documents_incidentNotification_UnitsEffected {
+optional  string requestId = 1;
+optional  string unitsEffected = 2;
+optional  string id = 3;
+}
+message pub_publish_envelope {
+optional  string activation = 1;
+optional  int32 appLastSeqn = 2;
+optional  string appPassword = 3;
+optional  int32 appSeqn = 4;
+optional  string appUserName = 5;
+optional  int32 priority = 6;
+optional  string businessContext = 7;
+repeated  int32 controlLabel = 8;
+optional  string errorsTo = 9;
+optional  string errorRequestsTo = 10;
+optional  string locale = 11;
+optional  int32 maxResults = 12;
+optional  string replyTo = 13;
+optional  int32 runLevel = 14;
+optional  bytes signature = 15;
+optional  string signatureType = 16;
+optional  int32 startResult = 17;
+optional  int32 tag = 18;
+optional  string trackId = 19;
+optional  string transactionId = 20;
+optional  string transformState = 21;
+optional  int32 age = 22;
+optional  string connectionIntegrity = 23;
+optional  string destId = 24;
+optional  int64 enqueueTime = 25;
+optional  string logBroker = 26;
+optional  string logHost = 27;
+optional  string pubDistinguishedName = 28;
+optional  string pubId = 29;
+optional  bytes pubNetAddr = 30;
+optional  int64 pubSeqn = 31;
+repeated  int32 pubLabel = 32;
+optional  int64 recvTime = 33;
+repeated  pub_publish_envelope_route route = 34;
+optional  string uuid = 35;
+optional  string status = 36;
+}
+message pub_publish_envelope_route {
+optional  string broker = 1;
+optional  int64 recvTime = 2;
+optional  int64 enqueueTime = 3;
+}

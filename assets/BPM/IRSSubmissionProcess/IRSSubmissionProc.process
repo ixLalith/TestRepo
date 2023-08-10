@@ -1,0 +1,1912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<businessProcessDiagram xmlns="http://www.webmethods.com/bpm/2006/"
+  Id="83934791-7e98-4f44-ba8b-63a33b4b2c66" bpmnStyle="false" build="1"
+  canvasPool="1" creator="Lalith Podduturi" description=""
+  failProcessOnStepFailure="false" focalRole="Focal role"
+  generateEDAEvents="true" name="IRSSubmissionProc" processCategory=""
+  rnSync="false" runtimeVersion="1" transitionLabelPref="expression"
+  unSynchJoinDeadPath="true" version="10.2.0">
+  <kpiDimensions/>
+  <systemKPIs>
+    <systemKPI Id="" description="" name="Volume" unitOfMeasure=""/>
+    <systemKPI Id="" description="" name="Cycle Time" unitOfMeasure=""/>
+    <systemKPI Id="" description="" name="Error Count" unitOfMeasure=""/>
+  </systemKPIs>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="ProcessData" name="{ProcessNamespace}ProcessData" type="{pub.prt}ProcessData"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review IRS NotificationInputEnv"
+    name="{ProcessNamespace}Review IRS NotificationInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review IRS NotificationOutputEnv"
+    name="{ProcessNamespace}Review IRS NotificationOutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <logicalDataItem Id="" description="" dimension="0" label="IRSProcDoc"
+    name="{IRSMgmt.documents}IRSProcDoc" type="{IRSMgmt.documents}IRSProcDoc"/>
+  <logicalDataItem Id="" description="" dimension="0" label="IRSProcDoc"
+    name="{ProcessNamespace}IRSProcDoc" type="{IRSMgmt.documents}IRSProcDoc"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Data Entry More InfoInputEnv"
+    name="{ProcessNamespace}Data Entry More InfoInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Data Entry More InfoOutputEnv"
+    name="{ProcessNamespace}Data Entry More InfoOutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review IRS Notification And DecideInputEnv"
+    name="{ProcessNamespace}Review IRS Notification And DecideInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review IRS Notification And DecideOutputEnv"
+    name="{ProcessNamespace}Review IRS Notification And DecideOutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="INI Submission By Data EntryInputEnv"
+    name="{ProcessNamespace}INI Submission By Data EntryInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="INI Submission By Data EntryOutputEnv"
+    name="{ProcessNamespace}INI Submission By Data EntryOutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review IRS INI And DecideInputEnv"
+    name="{ProcessNamespace}Review IRS INI And DecideInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review IRS INI And DecideOutputEnv"
+    name="{ProcessNamespace}Review IRS INI And DecideOutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review INIInputEnv"
+    name="{ProcessNamespace}Review INIInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review INIOutputEnv"
+    name="{ProcessNamespace}Review INIOutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review IRS INI Sentby HSE TeamInputEnv"
+    name="{ProcessNamespace}Review IRS INI Sentby HSE TeamInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review IRS INI Sentby HSE TeamOutputEnv"
+    name="{ProcessNamespace}Review IRS INI Sentby HSE TeamOutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="FIR Submission By Data EntryInputEnv"
+    name="{ProcessNamespace}FIR Submission By Data EntryInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="FIR Submission By Data EntryOutputEnv"
+    name="{ProcessNamespace}FIR Submission By Data EntryOutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review IRS FIR and DecideInputEnv"
+    name="{ProcessNamespace}Review IRS FIR and DecideInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review IRS FIR and DecideOutputEnv"
+    name="{ProcessNamespace}Review IRS FIR and DecideOutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review FIRInputEnv"
+    name="{ProcessNamespace}Review FIRInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review FIROutputEnv"
+    name="{ProcessNamespace}Review FIROutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review FIR Sentby HSE TeamInputEnv"
+    name="{ProcessNamespace}Review FIR Sentby HSE TeamInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review FIR Sentby HSE TeamOutputEnv"
+    name="{ProcessNamespace}Review FIR Sentby HSE TeamOutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review FIR Approved By HSE TeamInputEnv"
+    name="{ProcessNamespace}Review FIR Approved By HSE TeamInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review FIR Approved By HSE TeamOutputEnv"
+    name="{ProcessNamespace}Review FIR Approved By HSE TeamOutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review Final FIR and DecideInputEnv"
+    name="{ProcessNamespace}Review Final FIR and DecideInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review Final FIR and DecideOutputEnv"
+    name="{ProcessNamespace}Review Final FIR and DecideOutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review Final FIRInputEnv"
+    name="{ProcessNamespace}Review Final FIRInputEnv" type="{pub.task}TaskQueueInfo"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="Review Final FIROutputEnv"
+    name="{ProcessNamespace}Review Final FIROutputEnv" type="{pub.task}TaskCompletionInfo"/>
+  <timeout calendarAlias="" calendarTime="0:0:0"
+    dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+    dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+    dynamicFieldName="" isCalendarTimeout="false" isStaticTimeout="true"
+    isXPathTimeout="false" pipelineCalendarAlias=""
+    pipelineCalendarDays="" pipelineCalendarHours=""
+    pipelineCalendarMinutes="" timeoutStyle="RELATIVE"
+    timeoutType="processTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+  <pool Id="5e73ebfe-3a2a-47aa-9e3c-8fc45c24a4ff" blue="128"
+    containerType="BPMN_SUBPROCESS" external="true"
+    externalizeConditions="false" green="128" isCollapsed="false"
+    isCompensating="false" isTestAfter="false" label="Pool"
+    labelBlue="255" labelGreen="204" labelRed="153" logicalServer=""
+    loopMaximum="0" loopMaximumField="" name="1"
+    orientation="horizontal" red="128" retryCount="0" stepLock="false"
+    uid="P2" useCorrelation="false">
+    <documentation/>
+    <businessKPIs/>
+    <fontData boldFont="false" fontFamily="" italicFont="false"/>
+    <poolReference Id="f48a3c78-8beb-40b8-89c6-33584ea6ac10"
+      label="External" logicalServer="Default" poolName="63"
+      stepLock="false" uid="S65" useCorrelation="false" x="13" y="12">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="" italicFont="false"/>
+    </poolReference>
+    <poolReference Id="479231ef-1970-493b-9248-82777bdd2b32"
+      label="IRS Process" logicalServer="Default" poolName="69"
+      stepLock="false" uid="S71" useCorrelation="false" x="13" y="197">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="" italicFont="false"/>
+    </poolReference>
+    <timeout calendarAlias="" calendarTime="0:0:0"
+      dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+      dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+      dynamicFieldName="" isCalendarTimeout="false"
+      isStaticTimeout="true" isXPathTimeout="false"
+      pipelineCalendarAlias="" pipelineCalendarDays=""
+      pipelineCalendarHours="" pipelineCalendarMinutes=""
+      timeoutStyle="RELATIVE" timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+  </pool>
+  <pool Id="a25dd294-dfea-472c-817c-02adacb6f4e3" blue="128"
+    containerType="BPMN_SUBPROCESS" external="true"
+    externalizeConditions="false" green="128" isCollapsed="false"
+    isCompensating="false" isTestAfter="false" label="External"
+    labelBlue="255" labelGreen="204" labelRed="153" logicalServer=""
+    loopMaximum="0" loopMaximumField="" name="63"
+    orientation="horizontal" red="128" retryCount="0" stepLock="false"
+    uid="P64" useCorrelation="false">
+    <documentation/>
+    <businessKPIs/>
+    <fontData boldFont="false" fontFamily="" italicFont="false"/>
+    <invokeStep Id="1a1261e3-1e25-4bc1-ab16-5c2190f671e4"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="" invokeId="" invokeLocation=""
+      invokeName="" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="IRS Notification Submission"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      loopMaximum="0" loopMaximumField="" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S66"
+      useCorrelation="false" width="93" x="92" y="50">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <wmExpression/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <timeout calendarAlias="" calendarTime="0:0:0"
+      dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+      dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+      dynamicFieldName="" isCalendarTimeout="false"
+      isStaticTimeout="true" isXPathTimeout="false"
+      pipelineCalendarAlias="" pipelineCalendarDays=""
+      pipelineCalendarHours="" pipelineCalendarMinutes=""
+      timeoutStyle="RELATIVE" timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+    <swimlane Id="fe0cbef3-5a4b-4a57-af5c-d14b626dd936" blue="204"
+      description="PDSRS_IWPP_DataEntry_Role" green="255" height="170"
+      label="Data Entry" labelBlue="255" labelGreen="238" labelRed="221"
+      name="Data Entry" red="255" uid="W8" width="302">
+      <documentation/>
+    </swimlane>
+  </pool>
+  <pool Id="429d3051-8b5e-4607-baa9-fe14f63dc5c5" blue="128"
+    containerType="BPMN_SUBPROCESS" errorHandler="S307" external="false"
+    externalizeConditions="false" green="128" isCollapsed="false"
+    isCompensating="false" isTestAfter="false" label="IRS Process"
+    labelBlue="255" labelGreen="204" labelRed="153" logicalServer=""
+    loopMaximum="0" loopMaximumField="" name="69"
+    orientation="horizontal" red="128" retryCount="0" stepLock="false"
+    uid="P70" useCorrelation="false">
+    <documentation/>
+    <businessKPIs/>
+    <fontData boldFont="false" fontFamily="" italicFont="false"/>
+    <receiveStep Id="8aa8ca2c-e3ac-42aa-8f0e-ffa77c082975"
+      allowsSynchronousReply="false" edaEventQName="" edaSubFilter=""
+      edaSubFilterLang="" eventType="START"
+      externalizeConditions="false" height="28"
+      isStartStepServiceRequired="true" label="Receive Notification"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      outputMessageType="{IRSMgmt.documents}IRSProcDoc"
+      receiveProtocol="SUBSCRIPTION" receiveType="EMPTY"
+      stepLock="false" uid="S72" useCorrelation="false" width="28"
+      x="117" y="114">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <output name="{IRSMgmt.documents}IRSProcDoc"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <gatewayStep Id="81e8cd90-43fb-45ac-8cf8-1b636da10b59"
+      externalizeConditions="false" gatewayType="EXCLUSIVE" height="34"
+      label="Primay Rep Decision" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" retryCount="0" stepLock="false" uid="S73"
+      useCorrelation="false" width="34" x="684" y="286">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </gatewayStep>
+    <gatewayStep Id="1d3c863b-9196-4ce7-b579-cf05fb2e1fa8"
+      externalizeConditions="false" gatewayType="EXCLUSIVE" height="34"
+      label="DOE Decision" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" retryCount="0" stepLock="false" uid="S75"
+      useCorrelation="false" width="34" x="1132" y="467">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </gatewayStep>
+    <gatewayStep Id="97b0da4b-e8ee-4014-8756-924fc38c1c47"
+      externalizeConditions="false" gatewayType="EXCLUSIVE" height="34"
+      label="Notification Approval Decision" labelHeight="-1"
+      labelWidth="-1" logicalServer="Default" retryCount="0"
+      stepLock="false" uid="S76" useCorrelation="false" width="34"
+      x="311" y="111">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </gatewayStep>
+    <gatewayStep Id="c5ee4840-fa4a-4036-9c56-d5051cfbe617"
+      externalizeConditions="false" gatewayType="EXCLUSIVE" height="34"
+      label="Primay Rep INI Decision" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" retryCount="0" stepLock="false" uid="S117"
+      useCorrelation="false" width="34" x="684" y="828">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </gatewayStep>
+    <gatewayStep Id="28c593bb-22b4-4790-a150-3befd299109e"
+      externalizeConditions="false" gatewayType="EXCLUSIVE" height="34"
+      label="DOE INI Decision" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" retryCount="0" stepLock="false" uid="S133"
+      useCorrelation="false" width="34" x="629" y="987">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </gatewayStep>
+    <terminateStep Id="87f55839-6d34-4aae-a020-21512c15e39d"
+      escalateFailure="true" height="28" label="End" labelHeight="-1"
+      labelWidth="-1" logicalServer="Default" stepLock="false"
+      terminateStatus="DONE" uid="S135" useCorrelation="false"
+      width="28" x="304" y="990">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+    </terminateStep>
+    <gatewayStep Id="d5735aaf-d961-4c94-9ae2-5470c0e9a2e0"
+      externalizeConditions="false" gatewayType="EXCLUSIVE" height="34"
+      label="Primary Rep FIR Decision" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" retryCount="0" stepLock="false" uid="S170"
+      useCorrelation="false" width="34" x="564" y="1548">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </gatewayStep>
+    <gatewayStep Id="fd1d09d3-2eef-4b34-a909-795f6d407829"
+      externalizeConditions="false" gatewayType="EXCLUSIVE" height="34"
+      label="DOE FIR Decision" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" retryCount="0" stepLock="false" uid="S184"
+      useCorrelation="false" width="34" x="712" y="1734">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </gatewayStep>
+    <gatewayStep Id="b11ee307-584d-4379-ae42-99f41d0ca7b5"
+      externalizeConditions="false" gatewayType="EXCLUSIVE" height="34"
+      label="INI Approval Decision" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" retryCount="0" stepLock="false" uid="S189"
+      useCorrelation="false" width="34" x="767" y="627">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </gatewayStep>
+    <gatewayStep Id="4b06c3ad-89a9-4ba8-ab8e-b25726c08cb0"
+      externalizeConditions="false" gatewayType="EXCLUSIVE" height="34"
+      label="FIR Approval Decision" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" retryCount="0" stepLock="false" uid="S195"
+      useCorrelation="false" width="34" x="430" y="1367">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </gatewayStep>
+    <gatewayStep Id="08a95c7d-9de7-496a-a9f2-82fdc08ab9ce"
+      externalizeConditions="false" gatewayType="EXCLUSIVE" height="34"
+      label="FIR Final Approval Decision" labelHeight="-1"
+      labelWidth="-1" logicalServer="Default" retryCount="0"
+      stepLock="false" uid="S223" useCorrelation="false" width="34"
+      x="797" y="2085">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </gatewayStep>
+    <gatewayStep Id="5cac76d0-2a26-4c09-98b5-9c303c11f076"
+      externalizeConditions="false" gatewayType="EXCLUSIVE" height="34"
+      label="Primary Rep Final FIR Decision" labelHeight="-1"
+      labelWidth="-1" logicalServer="Default" retryCount="0"
+      stepLock="false" uid="S230" useCorrelation="false" width="34"
+      x="959" y="2275">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </gatewayStep>
+    <gatewayStep Id="72847a2d-4ad1-45c6-9cd9-f977a5e87402"
+      externalizeConditions="false" gatewayType="EXCLUSIVE" height="34"
+      label="Final FIR Decision" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" retryCount="0" stepLock="false" uid="S249"
+      useCorrelation="false" width="34" x="1122" y="2467">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </gatewayStep>
+    <terminateStep Id="5d322072-7c28-40ab-a9ed-4e427b5c9984"
+      escalateFailure="true" height="28" label="End" labelHeight="-1"
+      labelWidth="-1" logicalServer="Default" stepLock="false"
+      terminateStatus="DONE" uid="S254" useCorrelation="false"
+      width="28" x="1249" y="2470">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+    </terminateStep>
+    <gatewayStep Id="807b6053-65c5-4925-a013-4e4a4a53c51c"
+      externalizeConditions="false" gatewayType="PARALLEL" height="34"
+      label="INI Passthrough" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" retryCount="0" stepLock="false" uid="S263"
+      useCorrelation="false" width="34" x="797" y="286">
+      <documentation/>
+      <join joinType="And" suppressJoinFailure="false" synchronizationPoint="false">
+        <timeout calendarAlias="" calendarTime="0:0:0"
+          dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+          dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+          dynamicFieldName="" isCalendarTimeout="false"
+          isStaticTimeout="true" isXPathTimeout="false"
+          pipelineCalendarAlias="" pipelineCalendarDays=""
+          pipelineCalendarHours="" pipelineCalendarMinutes=""
+          timeoutStyle="RELATIVE" timeoutType="joinTimeout"
+          timeoutValue="0" xpathTimeoutValue=""/>
+        <joinExpression value=""/>
+      </join>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </gatewayStep>
+    <noneEventStep Id="818385a6-1d4e-4852-880e-f076d80b6b8d"
+      eventType="INTERMEDIATE_THROW" height="28"
+      label="Acknowledgement Done" labelHeight="32" labelWidth="28"
+      logicalServer="Default" receiveProtocol="SUBSCRIPTION"
+      stepLock="false" uid="S271" useCorrelation="false" width="28"
+      x="1242" y="470">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+    </noneEventStep>
+    <terminateStep Id="bc627974-4f1c-4de3-8765-d1dedb7a5fff"
+      escalateFailure="true" height="28" label="End Error"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      stepLock="false" terminateStatus="DONE" uid="S317"
+      useCorrelation="false" width="28" x="291" y="2458">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+    </terminateStep>
+    <invokeStep Id="f18e84ef-058e-4add-a3d5-c279ae499402"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="Review IRS Notification And Decide"
+      labelHeight="32" labelWidth="93" logicalServer="Default"
+      loopMaximum="0" loopMaximumField="" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S77"
+      useCorrelation="false" width="93" x="482" y="273">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}Review IRS Notification And DecideInputEnv"/>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <output name="{ProcessNamespace}Review IRS Notification And DecideOutputEnv"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="de831c18-a49e-4c18-aa7b-897b31f2c59a"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="Data Entry More Info" labelHeight="-1"
+      labelWidth="-1" logicalServer="Default" loopMaximum="0"
+      loopMaximumField="" retryCount="0" routingRuleSet=""
+      ruleType="TASK" stepLock="false" uid="S83" useCorrelation="false"
+      width="93" x="654" y="98">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <input name="{ProcessNamespace}Data Entry More InfoInputEnv"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <output name="{ProcessNamespace}Data Entry More InfoOutputEnv"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="9276457c-81c2-4cfa-91ef-4f34b0813e96"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="Review IRS Notification"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      loopMaximum="0" loopMaximumField="" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S84"
+      useCorrelation="false" width="93" x="767" y="454">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}Review IRS NotificationInputEnv"/>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}Review IRS NotificationOutputEnv"/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="b7cfbee1-7364-4b7c-821e-249f639c16a6"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="INI Submission By Data Entry"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      loopMaximum="0" loopMaximumField="" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S108"
+      useCorrelation="false" width="93" x="959" y="614">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <input name="{ProcessNamespace}INI Submission By Data EntryInputEnv"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <output name="{ProcessNamespace}INI Submission By Data EntryOutputEnv"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="aac02e54-4475-4a0c-b3b8-a33c3837a6fa"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="Review IRS INI And Decide"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      loopMaximum="0" loopMaximumField="" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S115"
+      useCorrelation="false" width="93" x="442" y="815">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <input name="{ProcessNamespace}Review IRS INI And DecideInputEnv"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <output name="{ProcessNamespace}Review IRS INI And DecideOutputEnv"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="594ae85a-9e8e-4f46-8492-b9355341bc1b"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="Review INI" labelHeight="-1"
+      labelWidth="-1" logicalServer="Default" loopMaximum="0"
+      loopMaximumField="" retryCount="0" routingRuleSet=""
+      ruleType="TASK" stepLock="false" uid="S131" useCorrelation="false"
+      width="93" x="737" y="974">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <input name="{ProcessNamespace}Review INIInputEnv"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <output name="{ProcessNamespace}Review INIOutputEnv"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="48638b6a-6804-4fff-af84-22f794201638"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="Review IRS INI Sentby HSE Team"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      loopMaximum="0" loopMaximumField="" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S143"
+      useCorrelation="false" width="93" x="737" y="1175">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <input name="{ProcessNamespace}Review IRS INI Sentby HSE TeamInputEnv"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <output name="{ProcessNamespace}Review IRS INI Sentby HSE TeamOutputEnv"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="87a0257a-f3f2-4863-9422-c8ba6f1ac19e"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="FIR Submission By Data Entry"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      loopMaximum="0" loopMaximumField="" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S163"
+      useCorrelation="false" width="93" x="534" y="1354">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <input name="{ProcessNamespace}FIR Submission By Data EntryInputEnv"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <output name="{ProcessNamespace}FIR Submission By Data EntryOutputEnv"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="bbbc22da-c51f-4aba-8835-6d513cce762b"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="Review FIR Sentby HSE Team"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      loopMaximum="0" loopMaximumField="" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S176"
+      useCorrelation="false" width="93" x="682" y="1896">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <input name="{ProcessNamespace}Review FIR Sentby HSE TeamInputEnv"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <output name="{ProcessNamespace}Review FIR Sentby HSE TeamOutputEnv"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="ce172f95-d3f3-4674-a6e0-34e1b0bbc6f8"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="Review FIR" labelHeight="-1"
+      labelWidth="-1" logicalServer="Default" loopMaximum="0"
+      loopMaximumField="" retryCount="0" routingRuleSet=""
+      ruleType="TASK" stepLock="false" uid="S182" useCorrelation="false"
+      width="93" x="325" y="1721">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <input name="{ProcessNamespace}Review FIRInputEnv"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <output name="{ProcessNamespace}Review FIROutputEnv"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="930fa5f4-ee8a-470d-9ac8-0e6269ad4911"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="Review IRS FIR and Decide"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      loopMaximum="0" loopMaximumField="" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S198"
+      useCorrelation="false" width="93" x="400" y="1535">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <input name="{ProcessNamespace}Review IRS FIR and DecideInputEnv"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <output name="{ProcessNamespace}Review IRS FIR and DecideOutputEnv"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="93addb70-61d1-48a8-a6a1-35dae379ac2d"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="Review FIR Approved By HSE Team"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      loopMaximum="0" loopMaximumField="" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S216"
+      useCorrelation="false" width="93" x="989" y="2072">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <input name="{ProcessNamespace}Review FIR Approved By HSE TeamInputEnv"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <output name="{ProcessNamespace}Review FIR Approved By HSE TeamOutputEnv"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="25b91b94-6750-4fe0-9f89-56333ecb6c08"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="Review Final FIR and Decide"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      loopMaximum="0" loopMaximumField="" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S222"
+      useCorrelation="false" width="93" x="767" y="2262">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <input name="{ProcessNamespace}Review Final FIR and DecideInputEnv"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <output name="{ProcessNamespace}Review Final FIR and DecideOutputEnv"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="37d4bd02-459d-4757-ab65-d8cdc724af56"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="P/IRSTasks"
+      invokeId="D7482B22-B053-7AC4-AFCE-4CB8C30C2A73" invokeLocation=""
+      invokeName="IRSReqTask" invokeType="TASK" isCompensating="false"
+      isTestAfter="false" label="Review Final FIR" labelHeight="-1"
+      labelWidth="-1" logicalServer="Default" loopMaximum="0"
+      loopMaximumField="" retryCount="0" routingRuleSet=""
+      ruleType="TASK" stepLock="false" uid="S234" useCorrelation="false"
+      width="93" x="730" y="2454">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <input name="{ProcessNamespace}Review Final FIRInputEnv"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <output name="{ProcessNamespace}Review Final FIROutputEnv"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="cde3eb33-694d-40b8-beb9-b73dec0bbfb7"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="IRSMgmt.work.processServices"
+      invokeId="IRSMgmt.work.processServices:getProcConfigDetails"
+      invokeLocation="" invokeName="getProcConfigDetails"
+      invokeType="ISSERVICE" isCompensating="false" isTestAfter="false"
+      label="Get Process Config" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" loopMaximum="0" loopMaximumField=""
+      retryCount="0" routingRuleSet="" ruleType="WMRULE"
+      stepLock="false" uid="S277" useCorrelation="false" width="93"
+      x="187" y="98">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}IRSProcDoc"/>
+      <wmExpression/>
+      <output name="{ProcessNamespace}IRSProcDoc"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep Id="d1c00657-9357-487b-bc64-7defa61adb39"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="60" invokeContainer="" invokeId="" invokeLocation=""
+      invokeName="" invokeType="ISSERVICE" isCompensating="false"
+      isTestAfter="false" label="Error Exception" labelHeight="-1"
+      labelWidth="-1" logicalServer="Default" loopMaximum="0"
+      loopMaximumField="" retryCount="0" routingRuleSet=""
+      ruleType="WMRULE" stepLock="false" uid="S307"
+      useCorrelation="false" width="93" x="390" y="2442">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <wmExpression/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <transition Id="adad9652-3df6-41fe-b2c1-c8c8a38003bf" blue="255"
+      conditionDescription="" conditionText="Default"
+      conditionType="ELSE" green="0" lineShape="STRAIGHT" red="0"
+      source="S77" sourceLocation="575,303" sourceTerminal="RIGHT"
+      target="S73" targetLocation="684,303" targetTerminal="LEFT" uid="T29">
+      <bendpoint index="0" location="672,501" weight="0.5"/>
+      <bendpoint index="1" location="672,501" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="16" red="255" width="40" x="652" y="485">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="9d41c1e3-47de-4a05-bb1a-5f33be0456d5" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S84"
+      sourceLocation="860,484" sourceTerminal="RIGHT" target="S75"
+      targetLocation="1132,484" targetTerminal="LEFT" uid="T105">
+      <bendpoint index="0" location="1038,682" weight="0.5"/>
+      <bendpoint index="1" location="1038,682" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-46">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="eefe41db-899d-475a-abe9-53df78069c88" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S115"
+      sourceLocation="535,845" sourceTerminal="RIGHT" target="S117"
+      targetLocation="684,845" targetTerminal="LEFT" uid="T119">
+      <bendpoint index="0" location="652,1043" weight="0.5"/>
+      <bendpoint index="1" location="652,1043" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-43">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="bcafd547-92a6-4098-9c5f-52424eaa6887" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S131"
+      sourceLocation="737,1004" sourceTerminal="LEFT" target="S133"
+      targetLocation="663,1004" targetTerminal="RIGHT" uid="T134">
+      <bendpoint index="0" location="742,1202" weight="0.5"/>
+      <bendpoint index="1" location="742,1202" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-43">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="9fd7543f-a4bf-4401-8dc8-3034416272f7" blue="255"
+      conditionDescription="" conditionText="Default"
+      conditionType="ELSE" green="0" lineShape="STRAIGHT" red="0"
+      source="S133" sourceLocation="646,1021" sourceTerminal="BOTTOM"
+      target="S143" targetLocation="737,1205" targetTerminal="LEFT" uid="T144">
+      <bendpoint index="0" location="689,1403" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="26" red="255" width="67" x="688" y="1270">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="ee0c4a2e-017f-47e9-88c2-d87f942b2972" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S182"
+      sourceLocation="418,1751" sourceTerminal="RIGHT" target="S184"
+      targetLocation="712,1751" targetTerminal="LEFT" uid="T185">
+      <bendpoint index="0" location="608,1949" weight="0.5"/>
+      <bendpoint index="1" location="608,1949" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-111">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="fbe61bf8-8b9e-48fb-986b-4967741ce30d" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S198"
+      sourceLocation="493,1565" sourceTerminal="RIGHT" target="S170"
+      targetLocation="564,1565" targetTerminal="LEFT" uid="T199">
+      <bendpoint index="0" location="570,1763" weight="0.5"/>
+      <bendpoint index="1" location="570,1763" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-21">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="64798d54-89f4-4645-a173-6ef252dc4644" blue="255"
+      conditionDescription="" conditionText="Default"
+      conditionType="ELSE" green="0" lineShape="STRAIGHT" red="0"
+      source="S184" sourceLocation="729,1768" sourceTerminal="BOTTOM"
+      target="S176" targetLocation="728,1896" targetTerminal="TOP" uid="T213">
+      <bendpoint index="0" location="772,2030" weight="0.5"/>
+      <bendpoint index="1" location="771,2030" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="22" red="255" width="79" x="787" y="2025">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="1e2622b2-097b-42d0-871d-042dbde99a38" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S216"
+      sourceLocation="989,2102" sourceTerminal="LEFT" target="S223"
+      targetLocation="831,2102" targetTerminal="RIGHT" uid="T224">
+      <bendpoint index="0" location="952,2300" weight="0.5"/>
+      <bendpoint index="1" location="952,2300" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-22">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="ddb71193-1307-47c8-ac3e-3900d8caa8b0" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S222"
+      sourceLocation="860,2292" sourceTerminal="RIGHT" target="S230"
+      targetLocation="959,2292" targetTerminal="LEFT" uid="T231">
+      <bendpoint index="0" location="952,2490" weight="0.5"/>
+      <bendpoint index="1" location="952,2490" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-22">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="d7af335d-44d0-49d0-be1f-5d082e27ec26" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S234"
+      sourceLocation="823,2484" sourceTerminal="RIGHT" target="S249"
+      targetLocation="1122,2484" targetTerminal="LEFT" uid="T250">
+      <bendpoint index="0" location="1014,2682" weight="0.5"/>
+      <bendpoint index="1" location="1014,2682" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-20">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="b59eba91-6592-4938-9a52-c3e680d4cd27" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S72"
+      sourceLocation="145,128" sourceTerminal="RIGHT" target="S277"
+      targetLocation="187,128" targetTerminal="LEFT" uid="T278">
+      <bendpoint index="0" location="208,326" weight="0.5"/>
+      <bendpoint index="1" location="208,326" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="-1" y="-1">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="4ab19154-c4ec-4f0c-a8a9-bc4b53c8e1e3" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S277"
+      sourceLocation="280,128" sourceTerminal="RIGHT" target="S76"
+      targetLocation="311,128" targetTerminal="LEFT" uid="T279">
+      <bendpoint index="0" location="338,326" weight="0.5"/>
+      <bendpoint index="1" location="338,326" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="-1" y="-1">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="5c767ef6-2ab0-456d-9feb-c4c4473a1343" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/isApprovalRequired = True"
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S76" sourceLocation="345,128" sourceTerminal="RIGHT"
+      target="S77" targetLocation="482,303" targetTerminal="LEFT" uid="T280">
+      <bendpoint index="0" location="456,326" weight="0.5"/>
+      <bendpoint index="1" location="456,501" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="38" red="255" width="193" x="345" y="255">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="isApprovalRequired"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'True'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="0dbb4e24-88d9-4889-91ec-82c659e1dd9f" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S83"
+      sourceLocation="654,128" sourceTerminal="LEFT" target="S77"
+      targetLocation="528,273" targetTerminal="TOP" uid="T281">
+      <bendpoint index="0" location="571,326" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-46">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="47bc5fa7-ee11-4203-b96a-31052b5334e1" blue="255"
+      conditionDescription="" conditionText="Default"
+      conditionType="ELSE" green="0" lineShape="STRAIGHT" red="0"
+      source="S73" sourceLocation="718,303" sourceTerminal="RIGHT"
+      target="S263" targetLocation="797,303" targetTerminal="LEFT" uid="T282">
+      <bendpoint index="0" location="800,501" weight="0.5"/>
+      <bendpoint index="1" location="800,501" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="16" red="255" width="66" x="778" y="473">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{PDSRSSubmission.documents}ReportProc"
+          operator="=" rightOperand="'APPROVED'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="58b3a884-73ba-4293-8e35-92350254cd18" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S263"
+      sourceLocation="814,320" sourceTerminal="BOTTOM" target="S84"
+      targetLocation="813,454" targetTerminal="TOP" uid="T283">
+      <bendpoint index="0" location="857,598" weight="0.5"/>
+      <bendpoint index="1" location="856,598" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-46">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="48138c8f-1369-435a-9a63-fb6798b2233f" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S263"
+      sourceLocation="831,303" sourceTerminal="RIGHT" target="S108"
+      targetLocation="1005,614" targetTerminal="TOP" uid="T284">
+      <bendpoint index="0" location="1048,501" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-23">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="dcde58b0-6f2c-4076-8274-cec9e8af82dc" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/action = MORE INFO" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S73"
+      sourceLocation="701,286" sourceTerminal="TOP" target="S83"
+      targetLocation="700,158" targetTerminal="BOTTOM" uid="T285">
+      <bendpoint index="0" location="744,356" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="22" red="255" width="227" x="754" y="411">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'MORE INFO'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="099a5a8d-9162-4674-af86-3adf235562eb" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/action = DOE MORE INFO"
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S75" sourceLocation="1149,467" sourceTerminal="TOP"
+      target="S83" targetLocation="747,128" targetTerminal="RIGHT" uid="T286">
+      <bendpoint index="0" location="1192,326" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="41" red="255" width="193" x="1135" y="371">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'DOE MORE INFO'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="70a033a2-87a6-432f-b99e-3872d04ffa35" blue="255"
+      conditionDescription="" conditionText="Default"
+      conditionType="ELSE" green="0" lineShape="STRAIGHT" red="0"
+      source="S75" sourceLocation="1166,484" sourceTerminal="RIGHT"
+      target="S271" targetLocation="1242,483" targetTerminal="LEFT" uid="T287">
+      <bendpoint index="0" location="1246,682" weight="0.5"/>
+      <bendpoint index="1" location="1246,681" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="16" red="255" width="56" x="1220" y="649">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{PDSRSSubmission.documents}ReportProc"
+          operator="=" rightOperand="'APPROVED'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="9b1300e8-92e6-48fd-8c4d-04143f09b493" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S108"
+      sourceLocation="959,644" sourceTerminal="LEFT" target="S189"
+      targetLocation="801,644" targetTerminal="RIGHT" uid="T288">
+      <bendpoint index="0" location="922,842" weight="0.5"/>
+      <bendpoint index="1" location="922,842" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-23">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="08f77aba-0c69-4f61-9e28-01ad9f67afbd" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/isApprovalRequired = True"
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S189" sourceLocation="767,644" sourceTerminal="LEFT"
+      target="S115" targetLocation="488,815" targetTerminal="TOP" uid="T289">
+      <bendpoint index="0" location="531,842" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="23" red="255" width="250" x="522" y="795">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="isApprovalRequired"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'True'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="533b60b8-8ec1-4fde-8a03-448c4d0b8767" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/action = MORE INFO" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S117"
+      sourceLocation="718,845" sourceTerminal="RIGHT" target="S108"
+      targetLocation="1005,674" targetTerminal="BOTTOM" uid="T291">
+      <bendpoint index="0" location="1048,1043" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="23" red="255" width="230" x="840" y="1018">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'MORE INFO'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="984efdc5-f853-4bb1-895c-dada38fbf374" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/action = MORE INFO" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S133"
+      sourceLocation="646,987" sourceTerminal="TOP" target="S108"
+      targetLocation="1052,644" targetTerminal="RIGHT" uid="T292">
+      <bendpoint index="0" location="689,1157" weight="0.5"/>
+      <bendpoint index="1" location="1104,1157" weight="0.5"/>
+      <bendpoint index="2" location="1104,842" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="26" red="255" width="230" x="1025" y="1101">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'MORE INFO'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="a4793fdb-0930-4ad7-a762-d39eed833ded" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S143"
+      sourceLocation="783,1175" sourceTerminal="TOP" target="S131"
+      targetLocation="783,1034" targetTerminal="BOTTOM" uid="T293">
+      <bendpoint index="0" location="826,1302" weight="0.5"/>
+      <bendpoint index="1" location="826,1302" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-32">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="ba2ca9e1-1e97-42a2-a2f0-2fcdfac66314" blue="255"
+      conditionDescription="" conditionText="IRSProcDoc/action = FIR"
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S133" sourceLocation="629,1004" sourceTerminal="LEFT"
+      target="S163" targetLocation="580,1354" targetTerminal="TOP" uid="T294">
+      <bendpoint index="0" location="623,1202" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="24" red="255" width="177" x="462" y="1271">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'FIR'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="33248382-ca55-44e1-abab-b704cab7aa69" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/action = MORE INFO" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S184"
+      sourceLocation="729,1734" sourceTerminal="TOP" target="S163"
+      targetLocation="627,1384" targetTerminal="RIGHT" uid="T295">
+      <bendpoint index="0" location="772,1582" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="26" red="255" width="212" x="721" y="1817">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'MORE INFO'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="bfc5fcee-dec5-4dc5-a0de-da46f1417759" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/action = MORE INFO" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S170"
+      sourceLocation="581,1548" sourceTerminal="TOP" target="S163"
+      targetLocation="580,1414" targetTerminal="BOTTOM" uid="T296">
+      <bendpoint index="0" location="624,1612" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="21" red="255" width="209" x="570" y="1663">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'MORE INFO'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="951229af-79cb-407f-a84c-f13c15a3736e" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S163"
+      sourceLocation="534,1384" sourceTerminal="LEFT" target="S195"
+      targetLocation="464,1384" targetTerminal="RIGHT" uid="T297">
+      <bendpoint index="0" location="542,1582" weight="0.5"/>
+      <bendpoint index="1" location="542,1582" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-21">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="705a182b-fb0b-449b-9b04-ad0bb28c00dd" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S176"
+      sourceLocation="682,1926" sourceTerminal="LEFT" target="S182"
+      targetLocation="371,1781" targetTerminal="BOTTOM" uid="T300">
+      <bendpoint index="0" location="414,2124" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="0" y="-111">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="88b79640-5c12-4e84-b973-db1841e1d451" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/action = APPROVE" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S184"
+      sourceLocation="746,1751" sourceTerminal="RIGHT" target="S216"
+      targetLocation="1035,2072" targetTerminal="TOP" uid="T301">
+      <bendpoint index="0" location="1078,1949" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="25" red="255" width="211" x="956" y="1914">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'APPROVE'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="475f72ab-d43d-4af3-a116-a24e7e154957" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/isApprovalRequired = True"
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S223" sourceLocation="814,2119" sourceTerminal="BOTTOM"
+      target="S222" targetLocation="813,2262" targetTerminal="TOP" uid="T302">
+      <bendpoint index="0" location="857,2410" weight="0.5"/>
+      <bendpoint index="1" location="856,2410" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="29" red="255" width="243" x="721" y="2415">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="isApprovalRequired"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'True'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="6286a996-1278-4117-a911-479b36a975d7" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/action = MORE INFO" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S230"
+      sourceLocation="993,2292" sourceTerminal="RIGHT" target="S216"
+      targetLocation="1040,2132" targetTerminal="BOTTOM" uid="T303">
+      <bendpoint index="0" location="1083,2490" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="26" red="255" width="220" x="1014" y="2418">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'MORE INFO'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="631ab591-4c7c-4fb4-8df2-db60f3ce4f22" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/action = MORE INFO" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S249"
+      sourceLocation="1139,2467" sourceTerminal="TOP" target="S216"
+      targetLocation="1082,2102" targetTerminal="RIGHT" uid="T305">
+      <bendpoint index="0" location="1182,2300" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="29" red="255" width="223" x="1127" y="2249">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'MORE INFO'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="6d0dbfdf-4e67-455f-a8f1-6e7c03449ce3" blue="255"
+      conditionDescription="" conditionText="Default"
+      conditionType="ELSE" green="0" lineShape="STRAIGHT" red="0"
+      source="S249" sourceLocation="1156,2484" sourceTerminal="RIGHT"
+      target="S254" targetLocation="1249,2484" targetTerminal="LEFT" uid="T306">
+      <bendpoint index="0" location="1244,2682" weight="0.5"/>
+      <bendpoint index="1" location="1244,2682" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="16" red="255" width="53" x="1236" y="2657">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="6088e368-b756-4bbe-863a-30ac5e1f5347" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/action = APPROVE" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S133"
+      sourceLocation="629,1004" sourceTerminal="LEFT" target="S135"
+      targetLocation="332,1003" targetTerminal="RIGHT" uid="T308">
+      <bendpoint index="0" location="522,1202" weight="0.5"/>
+      <bendpoint index="1" location="522,1201" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="24" red="255" width="193" x="403" y="1164">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'APPROVE'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="d8a0a81a-e6cf-42fe-a98f-2635d6efabf2" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/isApprovalRequired = True"
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S195" sourceLocation="447,1401" sourceTerminal="BOTTOM"
+      target="S198" targetLocation="446,1535" targetTerminal="TOP" uid="T309">
+      <bendpoint index="0" location="490,1666" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="23" red="255" width="230" x="304" y="1662">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="isApprovalRequired"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'True'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="e6451d1d-8614-40c3-af18-62575bbde5f7" blue="255"
+      conditionDescription="" conditionText="Default"
+      conditionType="ELSE" green="0" lineShape="STRAIGHT" red="0"
+      source="S76" sourceLocation="328,145" sourceTerminal="BOTTOM"
+      target="S84" targetLocation="767,484" targetTerminal="LEFT" uid="T313">
+      <bendpoint index="0" location="371,682" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="23" red="255" width="58" x="316" y="463">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="f4cc6b72-bc43-4a40-9863-fd3e28e7ad1f" blue="255"
+      conditionDescription="" conditionText="Default"
+      conditionType="ELSE" green="0" lineShape="STRAIGHT" red="0"
+      source="S189" sourceLocation="784,661" sourceTerminal="BOTTOM"
+      target="S131" targetLocation="783,974" targetTerminal="TOP" uid="T314">
+      <bendpoint index="0" location="827,1126" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="16" red="255" width="58" x="822" y="927">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="fd321d87-fa7c-4660-aee3-c6be81d66164" blue="255"
+      conditionDescription="" conditionText="Default"
+      conditionType="ELSE" green="0" lineShape="STRAIGHT" red="0"
+      source="S195" sourceLocation="430,1384" sourceTerminal="LEFT"
+      target="S182" targetLocation="325,1751" targetTerminal="LEFT" uid="T315">
+      <bendpoint index="0" location="278,1582" weight="0.5"/>
+      <bendpoint index="1" location="278,1949" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="16" red="255" width="40" x="399" y="1565">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="eae18f38-bc69-4e00-96b0-bc5a8519265b" blue="255"
+      conditionDescription="" conditionText="Default"
+      conditionType="ELSE" green="0" lineShape="STRAIGHT" red="0"
+      source="S223" sourceLocation="797,2102" sourceTerminal="LEFT"
+      target="S234" targetLocation="730,2484" targetTerminal="LEFT" uid="T316">
+      <bendpoint index="0" location="690,2300" weight="0.5"/>
+      <bendpoint index="1" location="690,2682" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="16" red="255" width="102" x="735" y="2277">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="50844898-00f2-4301-a9ac-874d5a7d7591" blue="255"
+      conditionDescription=""
+      conditionText="IRSProcDoc/action = DOE MORE INFO"
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S77" sourceLocation="528,333" sourceTerminal="BOTTOM"
+      target="S84" targetLocation="767,484" targetTerminal="LEFT" uid="T319">
+      <bendpoint index="0" location="571,637" weight="0.5"/>
+      <bendpoint index="1" location="784,637" weight="0.5"/>
+      <bendpoint index="2" location="784,682" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="26" red="255" width="235" x="569" y="604">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="action"
+          leftOperand="{ProcessNamespace}IRSProcDoc" operator="=" rightOperand="'DOE MORE INFO'"/>
+      </wmExpression>
+    </transition>
+    <transition Id="f6b485d2-2d9c-4d9e-be9f-57bbd59ab918" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S307"
+      sourceLocation="390,2472" sourceTerminal="LEFT" target="S317"
+      targetLocation="319,2472" targetTerminal="RIGHT" uid="T318">
+      <bendpoint index="0" location="396,2670" weight="0.5"/>
+      <bendpoint index="1" location="396,2670" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="-1" y="-1">
+        <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <timeout calendarAlias="" calendarTime="0:0:0"
+      dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+      dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+      dynamicFieldName="" isCalendarTimeout="false"
+      isStaticTimeout="true" isXPathTimeout="false"
+      pipelineCalendarAlias="" pipelineCalendarDays=""
+      pipelineCalendarHours="" pipelineCalendarMinutes=""
+      timeoutStyle="RELATIVE" timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+    <swimlane Id="e9fb1fa9-e65d-4a1a-b352-913198e669ba" blue="204"
+      description="DOE_IRS_External_Role,IRS_Notification_DataEntry_Role and IRS_Primary_Role"
+      green="255" height="246" label="Notification Data Entry"
+      labelBlue="255" labelGreen="238" labelRed="221"
+      name="Notification Data Entry" red="255" uid="W16" width="1316">
+      <documentation/>
+    </swimlane>
+    <swimlane Id="9ff03ae6-1e93-4442-85ff-6eac7e2f6955" blue="204"
+      description="IRS_Primary_Role" green="255" height="185"
+      label="Primary Representative" labelBlue="255" labelGreen="238"
+      labelRed="221" name="Primary Representative" red="255" uid="W19" width="1316">
+      <documentation/>
+    </swimlane>
+    <swimlane Id="6b02fd83-06e3-4d45-beec-31c90367d540" blue="204"
+      description="DOE_IRS_Internal_Role  , HSE team based on sector"
+      green="255" height="149" label="IRS HSE Team" labelBlue="255"
+      labelGreen="238" labelRed="221" name="IRS HSE Team" red="255"
+      uid="W47" width="1316">
+      <documentation/>
+    </swimlane>
+    <swimlane Id="773135bc-2687-419a-baed-cd891b2b9a2b" blue="204"
+      description="DOE_IRS_External_Role,IRS_INI_DataEntry_Role and IRS_Primary_Role"
+      green="255" height="190" label="INI Data Entry" labelBlue="255"
+      labelGreen="238" labelRed="221" name="INI Data Entry" red="255"
+      uid="W106" width="1316">
+      <documentation/>
+    </swimlane>
+    <swimlane Id="74fdc042-84c3-4999-ab96-73b691d530d1" blue="204"
+      description="IRS_Primary_Role" green="255" height="170"
+      label="Primary Representative" labelBlue="255" labelGreen="238"
+      labelRed="221" name="Primary Representative" red="255" uid="W112" width="1316">
+      <documentation/>
+    </swimlane>
+    <swimlane Id="02bd4a35-56a8-4f1c-a45a-bcad75e18324" blue="204"
+      description="DOE_IRS_Internal_Role, HSE team based on sector"
+      green="255" height="198" label="IRS HSE Team" labelBlue="255"
+      labelGreen="238" labelRed="221" name="IRS HSE Team" red="255"
+      uid="W130" width="1316">
+      <documentation/>
+    </swimlane>
+    <swimlane Id="8fb8d1a1-3ae8-4db5-94e1-787d66ab9a4f" blue="204"
+      description="DOE_IRS_Internal_Role, Technical team or Legal team based on sector"
+      green="255" height="144" label="IRS Technical Or Legal Team"
+      labelBlue="255" labelGreen="238" labelRed="221"
+      name="IRS Technical Or Legal Team" red="255" uid="W142" width="1316">
+      <documentation/>
+    </swimlane>
+    <swimlane Id="b64ccacd-156e-4b40-bdd1-ac3d31b448a4" blue="204"
+      description="IRS_DataEntry_Role,IRS_FIR_DataEntry_Role"
+      green="255" height="236" label="FIR Data Entry" labelBlue="255"
+      labelGreen="238" labelRed="221" name="FIR Data Entry" red="255"
+      uid="W151" width="1316">
+      <documentation/>
+    </swimlane>
+    <swimlane Id="abfdeeca-5fcf-4a83-b841-56a2b4390f7c" blue="204"
+      description="IRS_Primary_Role" green="255" height="148"
+      label="Primary Representative" labelBlue="255" labelGreen="238"
+      labelRed="221" name="Primary Representative" red="255" uid="W171" width="1316">
+      <documentation/>
+    </swimlane>
+    <swimlane Id="541debd4-15cc-4f83-85ef-f9b7f7ac8823" blue="204"
+      description="DOE_IRS_Internal_Role, HSE team based on sector"
+      green="255" height="198" label="IRS HSE Team" labelBlue="255"
+      labelGreen="238" labelRed="221" name="IRS HSE Team" red="255"
+      uid="W181" width="1316">
+      <documentation/>
+    </swimlane>
+    <swimlane Id="f7549fc9-cf1d-4f22-87f3-6cac9d429741" blue="204"
+      description="DOE_IRS_Internal_Role, Technical team or Legal team based on sector"
+      green="255" height="152" label="IRS Technical Or Legal Team"
+      labelBlue="255" labelGreen="238" labelRed="221"
+      name="IRS Technical Or Legal Team" red="255" uid="W175" width="1316">
+      <documentation/>
+    </swimlane>
+    <swimlane Id="89246a4d-89fc-4598-a9e9-504230fa865e" blue="204"
+      green="255" height="179" label="FIR Data Entry" labelBlue="255"
+      labelGreen="238" labelRed="221" name="FIR Data Entry" red="255"
+      uid="W215" width="1316">
+      <documentation/>
+    </swimlane>
+    <swimlane Id="76073a0c-9281-477c-99f3-fa9bee27a717" blue="204"
+      description="IRS_Primary_Role" green="255" height="178"
+      label="Primary Representative" labelBlue="255" labelGreen="238"
+      labelRed="221" name="Primary Representative" red="255" uid="W221" width="1316">
+      <documentation/>
+    </swimlane>
+    <swimlane Id="3bf45e50-882b-4963-b099-a7391d2c9f25" blue="204"
+      description="DOE_IRS_Internal_Role, HSE team based on sector"
+      green="255" height="244" label="IRS HSE Team" labelBlue="255"
+      labelGreen="238" labelRed="221" name="IRS HSE Team" red="255"
+      uid="W233" width="1316">
+      <documentation/>
+    </swimlane>
+  </pool>
+  <documentation/>
+  <messageFlow Id="8c4a8017-4dde-4fa2-8528-8aa9488f6649" blue="100"
+    conditionDescription="" green="100" lineShape="STRAIGHT" red="100"
+    source="S66" sourceLocation="92,80" sourcePool="63"
+    sourceTerminal="LEFT" target="S72" targetLocation="117,128"
+    targetPool="69" targetTerminal="LEFT" uid="312">
+    <bendpoint index="0" location="124,93" weight="0.5"/>
+    <bendpoint index="1" location="124,326" weight="0.5"/>
+    <labelLayout blue="0" defaultLocation="true" green="196" height="-1"
+      red="255" width="-1" x="-1" y="-1">
+      <fontData boldFont="false" fontFamily="Arial" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+    </labelLayout>
+  </messageFlow>
+</businessProcessDiagram>

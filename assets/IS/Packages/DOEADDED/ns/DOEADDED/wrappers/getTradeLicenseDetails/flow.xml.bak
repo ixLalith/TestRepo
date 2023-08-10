@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE TIMEOUT="" SERVICE="IXCommon.work.flowServices:validateJWTToken" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="OUTPUT">
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="DOEADDED.work.flowServices:getTradeLicenseDetails" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="wrapper_type">IData</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">input</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">TradeLicenseDetailsRequestType</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="wrapper_type">IData</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="rec_closed">true</value>
+            <value name="modifiable">true</value>
+            <value name="rec_ref">DOEADDED.documents.tradeLicense.consumer:TradeLicenseDetailsRequestType</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">tradeLicenseNumber</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">logUserInfo</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">IXLoggingServer.documents:LogUserInformation</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">jwtResponse</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">IXCommon.documents:JWTResponse</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/tradeLicenseNumber;1;0" TO="/input;2;0/TradeLicenseDetailsRequestType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseDetailsRequestType/TradeLicenseNumber;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">input</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="is_public">false</value>
+            <value name="field_name">TradeLicenseDetailsRequestType</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="modifiable">true</value>
+            <value name="rec_ref">DOEADDED.documents.tradeLicense.consumer:TradeLicenseDetailsRequestType</value>
+          </record>
+        </array>
+        <value name="modifiable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">tradeLicenseNumber</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">$httpRequest</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">pub.flow:HTTPRequest</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">isValid</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">logUserInfo</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">IXLoggingServer.documents:LogUserInformation</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">status</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">IXCommon.documents:Status</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">output</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">DOEADDED.documents.tradeLicense.provider:Contents</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">errors</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">pub.rest.jsonapi:errorTemplate</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">jwtResponse</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">IXCommon.documents:JWTResponse</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">response</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">TradeLicenseAllDetailsResponseType</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="wrapper_type">IData</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="rec_closed">true</value>
+            <value name="modifiable">true</value>
+            <value name="rec_ref">DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">status</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="wrapper_type">IData</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="rec_closed">true</value>
+            <value name="modifiable">true</value>
+            <value name="rec_ref">IXCommon.documents:Status</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="wrapper_type">IData</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">response</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">TradeLicenseAllDetailsResponseType</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="wrapper_type">IData</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="rec_closed">true</value>
+            <value name="modifiable">true</value>
+            <value name="rec_ref">DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="is_public">false</value>
+            <value name="field_name">status</value>
+            <value name="field_type">recref</value>
+            <value name="field_dim">0</value>
+            <value name="wrapper_type">IData</value>
+            <value name="nillable">true</value>
+            <value name="form_qualified">false</value>
+            <value name="is_global">false</value>
+            <value name="rec_closed">true</value>
+            <value name="modifiable">true</value>
+            <value name="rec_ref">IXCommon.documents:Status</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/TradeLicenseNumber;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/tradeLicenseNumber;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/BusinessNameArb;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/businessNameArb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/BusinessNameEng;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/businessNameEng;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/BusinessLicenseBranchFlag;3.1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/businessLicenseBranchFlag;3.1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/BusinessLicenseIssueDate;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/businessLicenseIssueDate;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/BusinessLicenseExpiryDate;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/businessLicenseExpiryDate;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/BusinessLicenseAddressArb;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/businessLicenseAddressArb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/BusinessLicenseAddressEng;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/businessLicenseAddressEng;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/PROMobileNumber;3.7;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/PROMobileNumber;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/BuildingNumber;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/buildingNumber;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/CoordinatesX;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/coordinatesX;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/CoordinatesY;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/coordinatesY;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/EstablishmentDate;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/establishmentDate;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/ADCCIUnifiedID;3.7;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/ADCCIUnifiedID;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/LicenseRemarks;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/licenseRemarks;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/LegalForm;4;0;DOEADDED.documents.tradeLicense.consumer:LegalForm/LegalFormCode;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/legalForm;4;0;DOEADDED.documents.tradeLicense.provider:LegalForm/legalFormCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/LegalForm;4;0;DOEADDED.documents.tradeLicense.consumer:LegalForm/BusinessLegalFormArb;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/legalForm;4;0;DOEADDED.documents.tradeLicense.provider:LegalForm/businessLegalFormArb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/LegalForm;4;0;DOEADDED.documents.tradeLicense.consumer:LegalForm/BusinessLegalFormEng;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/legalForm;4;0;DOEADDED.documents.tradeLicense.provider:LegalForm/businessLegalFormEng;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/LicenseTypeCode;4;0;DOEADDED.documents.tradeLicense.consumer:LicenseTypeCode/LicenseTypeCode;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/licenseTypeCode;4;0;DOEADDED.documents.tradeLicense.provider:LicenseTypeCode/licenseTypeCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/LicenseTypeCode;4;0;DOEADDED.documents.tradeLicense.consumer:LicenseTypeCode/BusinessLicenseTypeArb;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/licenseTypeCode;4;0;DOEADDED.documents.tradeLicense.provider:LicenseTypeCode/businessLicenseTypeArb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/LicenseTypeCode;4;0;DOEADDED.documents.tradeLicense.consumer:LicenseTypeCode/BusinessLicenseTypeEng;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/licenseTypeCode;4;0;DOEADDED.documents.tradeLicense.provider:LicenseTypeCode/businessLicenseTypeEng;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/EstablishmentCountry;4;0;DOEADDED.documents.tradeLicense.consumer:EstablishmentCountry/CountryCode;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/establishmentCountry;4;0;DOEADDED.documents.tradeLicense.provider:EstablishmentCountry/countryCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/EstablishmentCountry;4;0;DOEADDED.documents.tradeLicense.consumer:EstablishmentCountry/CountryNameArb;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/establishmentCountry;4;0;DOEADDED.documents.tradeLicense.provider:EstablishmentCountry/countryNameArb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/EstablishmentCountry;4;0;DOEADDED.documents.tradeLicense.consumer:EstablishmentCountry/CountryNameEng;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/establishmentCountry;4;0;DOEADDED.documents.tradeLicense.provider:EstablishmentCountry/countryNameEng;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/BusinesslicenseCityArb;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/businesslicenseCityArb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/BusinesslicenseCityEng;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/businesslicenseCityEng;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/BusinessLicenseStatus;4;0;DOEADDED.documents.tradeLicense.consumer:BusinessLicenseStatus/BusinessLicenseStatusCode;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/businessLicenseStatus;4;0;DOEADDED.documents.tradeLicense.provider:BusinessLicenseStatus/businessLicenseStatusCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/BusinessLicenseStatus;4;0;DOEADDED.documents.tradeLicense.consumer:BusinessLicenseStatus/BusinessLicenseStatusArb;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/businessLicenseStatus;4;0;DOEADDED.documents.tradeLicense.provider:BusinessLicenseStatus/businessLicenseStatusArb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/BusinessLicenseStatus;4;0;DOEADDED.documents.tradeLicense.consumer:BusinessLicenseStatus/BusinessLicenseStatusEng;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/businessLicenseStatus;4;0;DOEADDED.documents.tradeLicense.provider:BusinessLicenseStatus/businessLicenseStatusEng;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/IssuePlace;4;0;DOEADDED.documents.tradeLicense.consumer:IssuePlace/IssuePlaceCode;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/issuePlace;4;0;DOEADDED.documents.tradeLicense.provider:IssuePlace/issuePlaceCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/IssuePlace;4;0;DOEADDED.documents.tradeLicense.consumer:IssuePlace/IssuePlaceArb;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/issuePlace;4;0;DOEADDED.documents.tradeLicense.provider:IssuePlace/issuePlaceArb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseBasicInfo/IssuePlace;4;0;DOEADDED.documents.tradeLicense.consumer:IssuePlace/IssuePlaceEng;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseBasicInfo;4;0;DOEADDED.documents.tradeLicense.provider:TradeLicenseBasicInfo/issuePlace;4;0;DOEADDED.documents.tradeLicense.provider:IssuePlace/issuePlaceEng;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.consumer:TradeLicensePartners/PartnerNameArb;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.provider:TradeLicensePartners/partnerNameArb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.consumer:TradeLicensePartners/PartnerNameEng;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.provider:TradeLicensePartners/partnerNameEng;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.consumer:TradeLicensePartners/LicenseRelationshipCode;4;0;DOEADDED.documents.tradeLicense.consumer:LicenseRelationshipCode/LicenseRelationshipCode;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.provider:TradeLicensePartners/licenseRelationshipCode;4;0;DOEADDED.documents.tradeLicense.provider:LicenseRelationshipCode/licenseRelationshipCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.consumer:TradeLicensePartners/LicenseRelationshipCode;4;0;DOEADDED.documents.tradeLicense.consumer:LicenseRelationshipCode/BusinessLicenseRelationshipArb;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.provider:TradeLicensePartners/licenseRelationshipCode;4;0;DOEADDED.documents.tradeLicense.provider:LicenseRelationshipCode/businessLicenseRelationshipArb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.consumer:TradeLicensePartners/LicenseRelationshipCode;4;0;DOEADDED.documents.tradeLicense.consumer:LicenseRelationshipCode/BusinessLicenseRelationshipEng;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.provider:TradeLicensePartners/licenseRelationshipCode;4;0;DOEADDED.documents.tradeLicense.provider:LicenseRelationshipCode/businessLicenseRelationshipEng;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.consumer:TradeLicensePartners/PartnerSharePercentage;3.7;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.provider:TradeLicensePartners/partnerSharePercentage;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.consumer:TradeLicensePartners/PartnerNationalityCode;4;0;DOEADDED.documents.tradeLicense.consumer:PartnerNationalityCode/CountryCode;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.provider:TradeLicensePartners/partnerNationalityCode;4;0;DOEADDED.documents.tradeLicense.provider:PartnerNationalityCode/countryCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.consumer:TradeLicensePartners/PartnerNationalityCode;4;0;DOEADDED.documents.tradeLicense.consumer:PartnerNationalityCode/CountryNameArb;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.provider:TradeLicensePartners/partnerNationalityCode;4;0;DOEADDED.documents.tradeLicense.provider:PartnerNationalityCode/countryNameArb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.consumer:TradeLicensePartners/PartnerNationalityCode;4;0;DOEADDED.documents.tradeLicense.consumer:PartnerNationalityCode/CountryNameEng;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicensePartners;4;1;DOEADDED.documents.tradeLicense.provider:TradeLicensePartners/partnerNationalityCode;4;0;DOEADDED.documents.tradeLicense.provider:PartnerNationalityCode/countryNameEng;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseActivities;4;1;DOEADDED.documents.tradeLicense.consumer:TradeLicenseActivities/ActivityCode;3.7;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseActivities;4;1;DOEADDED.documents.tradeLicense.provider:TradeLicenseActivities/activityCode;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseActivities;4;1;DOEADDED.documents.tradeLicense.consumer:TradeLicenseActivities/ActivityNameArb;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseActivities;4;1;DOEADDED.documents.tradeLicense.provider:TradeLicenseActivities/activityNameArb;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/TradeLicenseAllDetails;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetails/Contents;4;0;DOEADDED.documents.tradeLicense.consumer:Contents/TradeLicenseActivities;4;1;DOEADDED.documents.tradeLicense.consumer:TradeLicenseActivities/ActivityNameEng;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/tradeLicenseActivities;4;1;DOEADDED.documents.tradeLicense.provider:TradeLicenseActivities/activityNameEng;1;0">
+</MAPCOPY>
+
+<MAPDELETE FIELD="/input;2;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/tradeLicenseNumber;1;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/isValid;1;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/status;4;0;IXCommon.documents:Status">
+</MAPDELETE>
+
+<MAPCOPY FROM="/response;2;0/status;4;0;IXCommon.documents:Status/code;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/code;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/status;4;0;IXCommon.documents:Status/description;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/detail;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/status;4;0;IXCommon.documents:Status/msgCode;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/status;1;0">
+</MAPCOPY>
+
+<MAPDELETE FIELD="/response;2;0">
+</MAPDELETE>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/ResponseStatus;4;0;DOEADDED.documents.tradeLicense.consumer:ResponseStatus/StatusCode;3.7;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/responseStatus;4;0;DOEADDED.documents.tradeLicense.provider:ResponseStatus/statusCode;3.7;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/ResponseStatus;4;0;DOEADDED.documents.tradeLicense.consumer:ResponseStatus/StatusDescriptionEnglish;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/responseStatus;4;0;DOEADDED.documents.tradeLicense.provider:ResponseStatus/statusDescriptionEnglish;1;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/response;2;0/TradeLicenseAllDetailsResponseType;4;0;DOEADDED.documents.tradeLicense.consumer:TradeLicenseAllDetailsResponseType/ResponseStatus;4;0;DOEADDED.documents.tradeLicense.consumer:ResponseStatus/StatusDescriptionArabic;1;0" TO="/output;4;0;DOEADDED.documents.tradeLicense.provider:Contents/responseStatus;4;0;DOEADDED.documents.tradeLicense.provider:ResponseStatus/statusDescriptionArabic;1;0">
+</MAPCOPY>
+
+<MAPDELETE FIELD="/$httpRequest;4;0;pub.flow:HTTPRequest">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/logUserInfo;4;0;IXLoggingServer.documents:LogUserInformation">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/jwtResponse;4;0;IXCommon.documents:JWTResponse">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+</FLOW>

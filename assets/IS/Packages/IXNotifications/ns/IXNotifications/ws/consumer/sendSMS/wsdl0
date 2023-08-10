@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="sendSMS" targetNamespace="http://DESKTOP-3PN4GOC/DOEIntegrationCommon.ws.provider.soap.sendSMS:sendSMS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://DESKTOP-3PN4GOC/DOEIntegrationCommon.ws.provider.soap.sendSMS:sendSMS" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://DESKTOP-3PN4GOC/DOEIntegrationCommon.ws.provider.soap.sendSMS:sendSMS" xmlns:tns="http://DESKTOP-3PN4GOC/DOEIntegrationCommon.ws.provider.soap.sendSMS:sendSMS" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="sendSMS" type="tns:sendSMS"/>
+          <xsd:element name="sendSMSResponse" type="tns:sendSMSResponse"/>
+          <xsd:complexType name="sendSMS">
+            <xsd:sequence>
+              <xsd:element name="smsData" nillable="true" type="tns:SMSData"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="SMSData">
+            <xsd:sequence>
+              <xsd:element name="mobile" nillable="true" type="xsd:string"/>
+              <xsd:element name="message" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="sendSMSResponse">
+            <xsd:sequence>
+              <xsd:element name="status" nillable="true" type="tns:Status"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="Status">
+            <xsd:sequence>
+              <xsd:element name="code" nillable="true" type="xsd:string"/>
+              <xsd:element name="msgCode" nillable="true" type="xsd:string"/>
+              <xsd:element name="description" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="sendSMS_PortType_sendSMSResponse">
+    <wsdl:part name="parameters" element="tns:sendSMSResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendSMS_PortType_sendSMS">
+    <wsdl:part name="parameters" element="tns:sendSMS">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="sendSMS_PortType">
+    <wsdl:operation name="sendSMS">
+      <wsdl:input message="tns:sendSMS_PortType_sendSMS">
+    </wsdl:input>
+      <wsdl:output message="tns:sendSMS_PortType_sendSMSResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DOEIntegrationCommon_ws_provider_soap_sendSMS_sendSMS_Binder" type="tns:sendSMS_PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sendSMS">
+      <soap:operation soapAction="DOEIntegrationCommon_ws_provider_soap_sendSMS_sendSMS_Binder_sendSMS" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DOEIntegrationCommon.ws.provider.soap.sendSMS.sendSMS">
+    <wsdl:port name="DOEIntegrationCommon_ws_provider_soap_sendSMS_sendSMS_Port" binding="tns:DOEIntegrationCommon_ws_provider_soap_sendSMS_sendSMS_Binder">
+      <soap:address location="http://DESKTOP-3PN4GOC:5555/ws/DOEIntegrationCommon.ws.provider.soap.sendSMS:sendSMS/DOEIntegrationCommon_ws_provider_soap_sendSMS_sendSMS_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

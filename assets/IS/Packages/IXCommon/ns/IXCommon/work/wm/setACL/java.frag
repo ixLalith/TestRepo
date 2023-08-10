@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">setACL</value>
+  <array name="sig" type="value" depth="1">
+    <value>[i] record:1:required config</value>
+    <value>[i] - field:0:required resourceName</value>
+    <value>[i] - field:0:required aclName</value>
+    <value>[o] record:0:required result</value>
+    <value>[o] - field:0:required message</value>
+    <value>[o] - field:0:required isSuccess</value>
+  </array>
+  <value name="sigtype">java 3.5</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">U3RyaW5nIG1lc3NhZ2UgPSAiRmFpbGVkIjsNClN0cmluZyBpc1N1Y2Nlc3MgPSAiZmFsc2UiOw0K
+DQp0cnl7DQovLyBwaXBlbGluZQ0KSURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGlu
+ZS5nZXRDdXJzb3IoKTsNCg0KCS8vIGNvbmZpZw0KCUlEYXRhW10JY29uZmlnID0gSURhdGFVdGls
+LmdldElEYXRhQXJyYXkoIHBpcGVsaW5lQ3Vyc29yLCAiY29uZmlnIiApOw0KCWlmICggY29uZmln
+ICE9IG51bGwpDQoJew0KCQlmb3IgKCBpbnQgaSA9IDA7IGkgPCBjb25maWcubGVuZ3RoOyBpKysg
+KQ0KCQl7DQoJCQlJRGF0YUN1cnNvciBjb25maWdDdXJzb3IgPSBjb25maWdbaV0uZ2V0Q3Vyc29y
+KCk7DQoJCQkJU3RyaW5nCXJlc291cmNlTmFtZSA9IElEYXRhVXRpbC5nZXRTdHJpbmcoIGNvbmZp
+Z0N1cnNvciwgInJlc291cmNlTmFtZSIgKTsNCgkJCQlTdHJpbmcJYWNsTmFtZSA9IElEYXRhVXRp
+bC5nZXRTdHJpbmcoIGNvbmZpZ0N1cnNvciwgImFjbE5hbWUiICk7DQoJCQkJQUNMTWFuYWdlci5z
+ZXRBY2xHcm91cChyZXNvdXJjZU5hbWUsIGFjbE5hbWUpOw0KCQkJY29uZmlnQ3Vyc29yLmRlc3Ry
+b3koKTsNCgkJfQ0KCQkNCgl9DQpwaXBlbGluZUN1cnNvci5kZXN0cm95KCk7DQoNCm1lc3NhZ2Ug
+PSAiU3VjY2VzcyI7DQppc1N1Y2Nlc3MgPSAidHJ1ZSI7DQp9DQpjYXRjaCAoRXhjZXB0aW9uIGUp
+IHsNCgkvLyBUT0RPOiBoYW5kbGUgZXhjZXB0aW9uDQoJU3RyaW5nV3JpdGVyIHN3ID0gbmV3IFN0
+cmluZ1dyaXRlcigpOw0KCVByaW50V3JpdGVyIHB3ID0gbmV3IFByaW50V3JpdGVyKHN3KTsNCgll
+LnByaW50U3RhY2tUcmFjZShwdyk7DQoJbWVzc2FnZSA9IHN3LnRvU3RyaW5nKCk7DQoJaXNTdWNj
+ZXNzID0gImZhbHNlIjsNCn0NCg0KDQoNCi8vIHBpcGVsaW5lDQpJRGF0YUN1cnNvciBwaXBlbGlu
+ZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQoNCi8vIHJlc3VsdA0KSURhdGEJcmVz
+dWx0ID0gSURhdGFGYWN0b3J5LmNyZWF0ZSgpOw0KSURhdGFDdXJzb3IgcmVzdWx0Q3Vyc29yID0g
+cmVzdWx0LmdldEN1cnNvcigpOw0KSURhdGFVdGlsLnB1dCggcmVzdWx0Q3Vyc29yLCAibWVzc2Fn
+ZSIsIG1lc3NhZ2UgKTsNCklEYXRhVXRpbC5wdXQoIHJlc3VsdEN1cnNvciwgImlzU3VjY2VzcyIs
+IGlzU3VjY2VzcyApOw0KcmVzdWx0Q3Vyc29yLmRlc3Ryb3koKTsNCklEYXRhVXRpbC5wdXQoIHBp
+cGVsaW5lQ3Vyc29yXzEsICJyZXN1bHQiLCByZXN1bHQgKTsNCnBpcGVsaW5lQ3Vyc29yXzEuZGVz
+dHJveSgpOw0K</value>
+</Values>
